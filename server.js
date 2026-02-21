@@ -251,6 +251,7 @@ const path = require("path");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public"))); 
 
 app.post("/send-email", async (req, res) => {
   const {
@@ -272,7 +273,7 @@ app.post("/send-email", async (req, res) => {
     { rcode: rcode3, process: process3, quantity: quantity3, scanner: scanner3, options: options3, deadline: deadline3 },
   ].filter(i => i.rcode);
 
-app.use(express.static(path.join(__dirname, "public"))); 
+
 
   function renderOptions(opt = {}) {
     const map = {
