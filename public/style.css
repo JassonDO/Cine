@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 10px;
+}
+
+h2, h3 { margin: 10px 0; }
+
+.card {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* KHÁCH HÀNG */
+.customer-row {
+  display: flex;
+  gap: 8px;
+}
+.customer-row input { flex: 1; }
+
+/* DỊCH VỤ */
+.service-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.service-row select,
+.service-row input[type="number"] { width: 110px; }
+
+.options {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.options label { white-space: nowrap; }
+
+button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+}
+.add { background: #1976d2; color: white; }
+.remove { background: #d32f2f; color: white; }
+.submit {
+  background: #388e3c;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* IN */
+#printArea {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  background: white;
+  border: 1px dashed #aaa;
+}
+@media print {
+  body * { visibility: hidden; }
+  #printArea, #printArea * { visibility: visible; }
+  #printArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
